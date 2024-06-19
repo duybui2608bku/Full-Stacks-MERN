@@ -16,7 +16,6 @@ const verifyAccessToken = asyncHandler(async (req, res, next) => {
           message: "Invalid AccessToken",
         });
       }
-
       req.user = decoded;
       next();
     });
