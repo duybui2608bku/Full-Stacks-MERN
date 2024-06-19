@@ -24,7 +24,7 @@ var userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    Role: {
+    role: {
       type: String,
       default: "User",
     },
@@ -63,4 +63,5 @@ userSchema.methods = {
     return await bcrypt.compare(password, this.password);
   },
 };
+
 module.exports = mongoose.model("User", userSchema);

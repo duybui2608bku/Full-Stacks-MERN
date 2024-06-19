@@ -3,9 +3,11 @@ const dbConnect = require("./Config/DBconnect");
 require("dotenv").config();
 const initRouter = require("./Routes");
 const app = express();
+const cookieParser = require("cookie-parser");
 const port = process.env.PORT || 8888;
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 dbConnect();
 
